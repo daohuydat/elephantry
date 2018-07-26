@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/security
+      http://www.springframework.org/schema/security/spring-security-4.2.xsd
+      http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+
+	<http use-expressions="true" auto-config="true">
+
+		
+		<intercept-url pattern="/admin/adminManagement/add**" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/admin/adminManagement/add/*" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/admin/adminManagement/add/*/**" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/*/admin/adminManagement/add**" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/*/admin/adminManagement/add/*" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/*/admin/adminManagement/add/*/**" access="hasRole('ROLE_ROOT')" />
+		
+		<intercept-url pattern="/admin/adminManagement/view**" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/admin/adminManagement/view/*" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/admin/adminManagement/view/*/**" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/*/admin/adminManagement/view**" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/*/admin/adminManagement/view/*" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/*/admin/adminManagement/view/*/**" access="hasRole('ROLE_ROOT')" />
+		
+		<intercept-url pattern="/admin/queue/setting**" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/admin/queue/setting/*" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/admin/queue/setting/*/**" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/*/admin/queue/setting**" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/*/admin/queue/setting/*" access="hasRole('ROLE_ROOT')" />
+		<intercept-url pattern="/*/admin/queue/setting/*/**" access="hasRole('ROLE_ROOT')" />
+		
+		<intercept-url pattern="/admin/*/**"
+			access="hasAnyRole('ROLE_ROOT','ROLE_ADMIN')" />
+		<intercept-url pattern="/admin**"
+			access="hasAnyRole('ROLE_ROOT','ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/*"
+			access="hasAnyRole('ROLE_ROOT','ROLE_ADMIN')" />
+		<intercept-url pattern="/*/admin/*/**"
+			access="hasAnyRole('ROLE_ROOT','ROLE_ADMIN')" />
+		<intercept-url pattern="/*/admin**"
+			access="hasAnyRole('ROLE_ROOT','ROLE_ADMIN')" />
+		<intercept-url pattern="/*/admin/*"
+			access="hasAnyRole('ROLE_ROOT','ROLE_ADMIN')" />
+		<intercept-url pattern="/portal**" access="hasRole('ROLE_CUST')" />
+		<intercept-url pattern="/portal/*" access="hasRole('ROLE_CUST')" />
+		<intercept-url pattern="/portal/*/**" access="hasRole('ROLE_CUST')" />
+		<intercept-url pattern="/*/portal**" access="hasRole('ROLE_CUST')" />
+		<intercept-url pattern="/*/portal/*" access="hasRole('ROLE_CUST')" />
+		<intercept-url pattern="/*/portal/*/**" access="hasRole('ROLE_CUST')" />
+		
+		
+		
+
+		<csrf disabled="true" />
+		<access-denied-handler error-page="/403" />
+
+		<form-login login-page='/account/signin' login-processing-url="/j_spring_security_check"
+			default-target-url="/account/success" authentication-failure-url="/"
+
+			username-parameter="email" password-parameter="password" />
+
+		<logout />
+		<csrf />
+	</http>
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<!-- <user-service> <user name="user1" password="12345" authorities="ROLE_USER" 
+				/> <user name="admin1" password="12345" authorities="ROLE_ADMIN" /> </user-service> -->
+			<jdbc-user-service data-source-ref="jdbcDataSource1"
+				users-by-username-query="select Email, Password, Active from user where Email=?"
+				authorities-by-username-query="select Email, RoleId from user where Email=? " />
+				
+			 <password-encoder hash="bcrypt" />
+		</authentication-provider>
+	</authentication-manager>
+	<beans:bean id="jdbcDataSource1"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="url"
+			value="jdbc:mysql://localhost:3306/elephantrydb" />
+		<beans:property name="username" value="root" />
+		<beans:property name="password" value="123456" />
+	</beans:bean>
+
+
+
+</beans:beans>

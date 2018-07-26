@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+
+	<bean id="translationDAO" class="com.elephantry.dao.impl.TranslationDAOImpl"></bean>
+
+	<bean id="translationService" class="com.elephantry.service.impl.TranslationServiceImpl"></bean>
+
+	<bean id="userDAO" class="com.elephantry.dao.impl.UserDAOImpl"></bean>
+
+	<bean id="userService" class="com.elephantry.service.impl.UserServiceImpl"></bean>
+	
+	<bean id="recommendationDAO" class="com.elephantry.dao.impl.RecommendationDAOImpl"></bean>
+	
+	<bean id="recommendationService" class="com.elephantry.service.impl.RecommendationServiceImpl"></bean>
+
+	<bean id="customerDAO" class="com.elephantry.dao.impl.CustomerDAOImpl"></bean>
+	
+	<bean id="customerService" class="com.elephantry.service.impl.CustomerServiceImpl"></bean>
+	
+	<bean id="countryDAO" class="com.elephantry.dao.impl.CountryDAOImpl"></bean>
+	
+	<bean id="countryService" class="com.elephantry.service.impl.CountryServiceImpl"></bean>
+	
+	<bean id="provinceDAO" class="com.elephantry.dao.impl.ProvinceDAOImpl"></bean>
+	
+	<bean id="provinceService" class="com.elephantry.service.impl.ProvinceServiceImpl"></bean>
+	
+	<bean id="packageDAO" class="com.elephantry.dao.impl.PackageDAOImpl"></bean>
+	
+	<bean id="packageService" class="com.elephantry.service.impl.PackageServiceImpl"></bean>
+	
+	<bean id="roleDAO" class="com.elephantry.dao.impl.RoleDAOImpl"></bean>
+
+	<bean id="roleService" class="com.elephantry.service.impl.RoleServiceImpl"></bean>
+	
+	<bean id="paymentHistoryDAO" class="com.elephantry.dao.impl.PaymentHistoryDAOImpl"></bean>
+
+	<bean id="paymentHistoryService" class="com.elephantry.service.impl.PaymentHistoryServiceImpl"></bean>
+	
+	<bean id="paymentMethodDAO" class="com.elephantry.dao.impl.PaymentMethodDAOImpl"></bean>
+
+	<bean id="paymentMethodService" class="com.elephantry.service.impl.PaymentMethodServiceImpl"></bean>
+	
+	<bean id="uploadedFileDAO" class="com.elephantry.dao.impl.UploadedFileDAOImpl"></bean>
+
+	<bean id="uploadedFileService" class="com.elephantry.service.impl.UploadedFileServiceImpl"></bean>
+	
+	<bean id="notificationDAO" class="com.elephantry.dao.impl.NotificationDAOImpl"></bean>
+
+	<bean id="notificationService" class="com.elephantry.service.impl.NotificationServiceImpl"></bean>
+	
+	<bean id="configurationDAO" class="com.elephantry.dao.impl.ConfigurationDAOImpl"></bean>
+
+	<bean id="configurationService" class="com.elephantry.service.impl.ConfigurationServiceImpl"></bean>
+	
+	<bean id="feedbackDAO" class="com.elephantry.dao.impl.FeedbackDAOImpl"></bean>
+
+	<bean id="feedbackService" class="com.elephantry.service.impl.FeedbackServiceImpl"></bean>
+	
+	<bean id="initConfigParams" class="com.elephantry.model.InitConfigParams">
+		<property name="hadoopIpAddress" value="localhost" />
+		<property name="hadoopUser" value="elephantry" />
+		<property name="hdfsJarLibsDir" value="/libs" />
+		<property name="hdfsPort" value="54310" />
+		<property name="jobTrackerPort" value="54311" />
+		<property name="startQueueAtStartup" value="false" />
+	</bean>
+	
+	<bean id="paypalConfig" class="com.elephantry.model.PaypalConfig">
+		<property name="clientID" value="ATPOrBXiv-wsBGE-eLfMswRSnXyxHa6kqjA1rFyrttJS103EUHX3JzCFa2hWo6Cw5m5UV3xAOnp0TLAI" />
+		<property name="clientSecret" value="EMfjlUv52tvnIDCq1uIBIxRGAIGxP6Silg7iqFYSPzEBdL27PzrbI6hQvj5tREhIYecfld6mL68ZBtIZ" />
+		<property name="currency" value="USD" />
+		<property name="mode" value="sandbox" />
+		<property name="returnUrl" value="http://localhost:8080/elephantry/payment/confirm" />
+		<property name="cancelUrl" value="http://localhost:8080/elephantry/payment/paypalCancel" />
+	</bean>
+</beans>

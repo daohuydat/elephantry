@@ -1,0 +1,16 @@
+@CHARSET "ISO-8859-1";
+
+.setting-green {
+	background-color: green !important;
+	color: #FFF !important;
+}
+
+.setting-red {
+	background-color: red !important;
+	color: #FFF !important;
+}
+
+.setting-orange {
+	background-color: #ec971f !important;
+	color: #FFF !important;
+}

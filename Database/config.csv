@@ -1,0 +1,6 @@
+"Key";"Value"
+"elephantry.priority.scale";"2"
+"elephantry.queue.final.size.max";"4"
+"elephantry.queue.prepared.size.min";"20"
+"elephantry.running.size.max";"1"
+"elephantry.threshold";"0.0"

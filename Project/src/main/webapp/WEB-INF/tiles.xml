@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+
+	<!-- Master normal page -->
+	<definition name="master.page" template="/WEB-INF/views/template/master.jsp">
+		<put-attribute name="title" value="Elephantry" />
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/bootstrap-theme.min.css" />
+			<add-attribute value="/resources/css/sticky-footer.css" />
+			<add-attribute
+				value="/resources/vendors/bootstrap/dist/css/bootstrap.min.css" />
+			<add-attribute
+				value="/resources/vendors/font-awesome/css/font-awesome.min.css" />
+			<add-attribute value="/resources/vendors/nprogress/nprogress.css" />
+			<add-attribute value="/resources/vendors/animate.css/animate.min.css" />
+			<add-attribute value="/resources/build/css/custom.min.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+		</put-list-attribute>
+	</definition>
+
+	<!-- Master Admin Dashboard -->
+	<definition name="admin.master.page" template="/WEB-INF/views/template/admin/master.jsp">
+		<put-attribute name="title" value="Admin Dashboard" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/template/admin/header.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/template/admin/footer.jsp" />
+		<put-list-attribute name="stylesheets">
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+		</put-list-attribute>
+	</definition>
+
+	<!-- Master Customer Dashboard -->
+	<definition name="portal.master.page" template="/WEB-INF/views/template/portal/master.jsp">
+		<put-attribute name="title" value="Portal" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/template/portal/header.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/template/portal/footer.jsp" />
+		<put-list-attribute name="stylesheets">
+
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+		</put-list-attribute>
+	</definition>
+	<!-- ************************************************************************** -->
+
+
+	<!-- Pages normal -->
+	<definition name="index" extends="master.page">
+		<put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+		<put-list-attribute name="stylesheets" inherit="false">
+			<add-attribute value="/resources/vendors/animate.css/animate.min.css" />
+			<add-attribute value="/resources/assets/css/plugins.css" />
+			<add-attribute value="/resources/assets/css/bootstrap.min.css" />
+			<add-attribute value="/resources/assets/css/responsive.css" />
+			<add-attribute value="/resources/assets/css/robotonewfont.css" />
+			<add-attribute value="/resources/assets/css/style.css" />
+			<add-attribute value="/resources/css/animate.css" />
+			<add-attribute value="/resources/css/aos.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute
+				value="/resources/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js" />
+			<add-attribute value="/resources/js/aos.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="success" extends="master.page">
+		<put-attribute name="body" value="/WEB-INF/views/signinSuccess.jsp" />
+	</definition>
+	<definition name="signin" extends="master.page">
+		<put-attribute name="title" value="Sign in - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/signin.jsp" />
+		<put-list-attribute name="stylesheets" inherit="true">
+			<add-attribute value="/resources/css/jquery-ui.css" />
+			<add-attribute value="/resources/css/jquery-ui.min.css" />
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery.validate.js" />
+			<add-attribute value="/resources/js/dongna-script-signin.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="signout" extends="master.page">
+		<put-attribute name="title" value="Sign out - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/signout.jsp" />
+	</definition>
+	<definition name="signup" extends="master.page">
+		<put-attribute name="title" value="Sign up - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/signup.jsp" />
+		<put-list-attribute name="stylesheets" inherit="true">
+			<add-attribute
+				value="/resources/vendors/google-code-prettify/bin/prettify.min.css" />
+			<add-attribute value="/resources/vendors/switchery/dist/switchery.min.css" />
+			<add-attribute value="/resources/vendors/starrr/dist/starrr.css" />
+			<add-attribute value="/resources/vendors/iCheck/skins/flat/green.css" />
+			<add-attribute value="/resources/build/css/custom.min.css" />
+			<add-attribute value="/resources/css/jquery-ui.css" />
+			<add-attribute value="/resources/css/jquery-ui.min.css" />
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery.validate.js" />
+			<add-attribute value="/resources/js/form-validate.js" />
+			<add-attribute value="/resources/js/dongna-script-signup.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="checkout" extends="master.page">
+		<put-attribute name="title" value="Check out - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/checkout.jsp" />
+		<put-list-attribute name="stylesheets" inherit="true">
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/dongna-script-checkout.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="403" extends="master.page">
+		<put-attribute name="title" value="403 - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/403.jsp" />
+	</definition>
+	<definition name="404" extends="master.page">
+		<put-attribute name="title" value="404 - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/404.jsp" />
+	</definition>
+	<definition name="500" extends="master.page">
+		<put-attribute name="title" value="500 - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/500.jsp" />
+	</definition>
+	<definition name="paypal" extends="master.page">
+		<put-attribute name="title" value="Paypal - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/paypal.jsp" />
+		<put-attribute name="footer" value="" />
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/dongna-script-checkout.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="paypalConfirm" extends="master.page">
+		<put-attribute name="title" value="Confirm - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/paypalConfirm.jsp" />
+		<put-attribute name="footer" value="" />
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/dongna-script-checkout.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="paymentSuccess" extends="master.page">
+		<put-attribute name="title" value="Payment success - Elephantry" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/paymentSuccess.jsp" />
+		<put-attribute name="footer" value="" />
+		<put-list-attribute name="javascripts">
+			<!--  <add-attribute value="/resources/js/dongna-script-checkout.js" />-->
+		</put-list-attribute>
+	</definition>
+
+	<!-- START Pages for Admin Dashboard -->
+	<definition name="adminIndex" extends="admin.master.page">
+		<put-attribute name="title" value="Admin Dashboard" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/index.jsp" />
+		<put-list-attribute name="javascripts" inherit="true">
+			<add-attribute value="/resources/vendors/raphael/raphael.min.js" />
+			<add-attribute value="/resources/vendors/morris.js/morris.min.js" />
+			<add-attribute value="/resources/vendors/Chart.js/dist/Chart.min.js" />
+			<add-attribute value="/resources/admin/js/chartCustom.js " />
+		</put-list-attribute>
+	</definition>
+	<definition name="adminQueue" extends="admin.master.page">
+		<put-attribute name="title" value="Queue - Admin Dashboard" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/queue.jsp" />
+		<put-list-attribute name="javascripts" inherit="true">
+			<add-attribute value="/resources/js/jquery-ui.js" />
+			<add-attribute value="/resources/js/jquery.ba-throttle-debounce.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay.min.js" />
+			<add-attribute value="/resources/admin/js/queue.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="adminHadoop" extends="admin.master.page">
+		<put-attribute name="title" value="Hadoop - Admin Dashboard" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/hadoop.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/admin/css/hadoop.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute
+				value="/resources/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js" />
+			<add-attribute value="/resources/admin/js/hadoop.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="adminQueueSetting" extends="admin.master.page">
+		<put-attribute name="title" value="Queue Setting- Admin Dashboard" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/queueSetting.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/admin/css/queueSetting.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts" inherit="true">
+			<add-attribute value="/resources/admin/js/queueSetting.js" />
+			<add-attribute value="/resources/js/loadingoverlay.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay_progress.min.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="adminViewAdmin" extends="admin.master.page">
+		<put-attribute name="title" value="View Admin - Admin Dashboard" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/viewAdmin.jsp" />
+		<put-list-attribute name="javascripts" inherit="true">
+			<add-attribute value="/resources/js/jquery.ba-throttle-debounce.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay_progress.min.js" />
+			<add-attribute value="/resources/admin/js/adminManagement.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="adminViewFeedback" extends="admin.master.page">
+		<put-attribute name="title" value="View Feedback - Admin Dashboard" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/viewFeedback.jsp" />
+		<put-list-attribute name="javascripts" inherit="true">
+			<add-attribute value="/resources/admin/js/viewFeedback.js" />
+		</put-list-attribute>
+	</definition>
+	<!-- Dongna -->
+	<definition name="adminViewCustomer" extends="admin.master.page">
+		<put-attribute name="title" value="View Customer - Admin Dashboard" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/viewCustomer.jsp" />
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery.ba-throttle-debounce.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay_progress.min.js" />
+			<add-attribute value="/resources/admin/js/customerManagement.js" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Add new admin -->
+	<definition name="addNewAdmin" extends="admin.master.page">
+		<put-attribute name="title" value="New Admin - Admin Dashboard" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/addNewAdmin.jsp" />
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery.ba-throttle-debounce.min.js" />
+			<add-attribute value="/resources/admin/js/addNewAdmin.js" />
+		</put-list-attribute>
+	</definition>
+	<!-- Export Chart -->
+	<definition name="adminExportChart" extends="admin.master.page">
+		<put-attribute name="title" value="Export Charts - Admin Dashboard" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/exportChart.jsp" />
+		<put-list-attribute name="stylesheets">
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/vendors/Chart.js/dist/Chart.min.js" />
+		</put-list-attribute>
+	</definition>
+	<!-- View Chart -->
+	<definition name="adminViewChart" extends="admin.master.page">
+		<put-attribute name="title" value="View Charts - Admin Dashboard" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/viewChart.jsp" />
+		<put-list-attribute name="stylesheets">
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/vendors/raphael/raphael.min.js" />
+			<add-attribute value="/resources/vendors/morris.js/morris.min.js" />
+			<add-attribute value="/resources/vendors/Chart.js/dist/Chart.min.js" />
+			<add-attribute value="/resources/admin/js/chartCustom.js " />
+		</put-list-attribute>
+	</definition>
+	<!-- View Log -->
+	<definition name="adminViewLog" extends="admin.master.page">
+		<put-attribute name="title" value="View Logs - Admin Dashboard" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/viewLog.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute
+				value="/resources/vendors/bootstrap/dist/css/bootstrap.min.css" />
+			<add-attribute value="/resources/build/css/custom.min.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/vendors/Chart.js/dist/Chart.min.js" />
+			<add-attribute value="/resources/build/js/custom.min.js" />
+		</put-list-attribute>
+	</definition>
+	<!-- View Notification -->
+	<definition name="adminViewNotification" extends="admin.master.page">
+		<put-attribute name="title"
+			value="View Notifications - Admin Dashboard" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/viewNotification.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute
+				value="/resources/vendors/bootstrap/dist/css/bootstrap.min.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+		</put-list-attribute>
+	</definition>
+	<definition name="changePasswordAdmin" extends="admin.master.page">
+		<put-attribute name="title" value="Change your password - Admin" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/changePasswordAdmin.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/jquery-ui.css" />
+			<add-attribute value="/resources/css/bootstrap-toggle.min.css" />
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery-ui.js" />
+			<add-attribute value="/resources/js/jquery.validate.js" />
+			<add-attribute value="/resources/js/bootstrap-toggle.min.js" />
+			<add-attribute value="/resources/vendors/validator/validator.js" />
+			<add-attribute value="/resources/admin/js/changePasswordAdmin.js" />
+		</put-list-attribute>
+	</definition>
+
+	<definition name="profileCustomer" extends="admin.master.page">
+		<put-attribute name="title" value="Customer profile - Admin" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/profileCustomer.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/jquery-ui.css" />
+			<add-attribute value="/resources/css/bootstrap-toggle.min.css" />
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+	</definition>
+
+
+	<!-- END Pages for Admin Dashboard -->
+
+
+	<!-- START Pages for Customer Dashboard -->
+	<definition name="portalIndex" extends="portal.master.page">
+		<put-attribute name="body" value="/WEB-INF/views/portal/index.jsp" />
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/vendors/raphael/raphael.min.js" />
+			<add-attribute value="/resources/vendors/morris.js/morris.min.js" />
+			<add-attribute value="/resources/vendors/Chart.js/dist/Chart.min.js" />
+			<add-attribute value="/resources/portal/js/chartCustom.js " />
+		</put-list-attribute>
+	</definition>
+	<!--Customer Feedback -->
+	<definition name="feedback" extends="portal.master.page">
+		<put-attribute name="title" value="Send Feedback - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/createFeedback.jsp" />
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/portal/js/createFeedback.js" />
+		</put-list-attribute>
+	</definition>
+	<!-- customer view chart -->
+	<definition name="customerViewChart" extends="portal.master.page">
+		<put-attribute name="title" value="View Charts - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/viewChart.jsp" />
+		<put-list-attribute name="stylesheets">
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/vendors/raphael/raphael.min.js" />
+			<add-attribute value="/resources/vendors/morris.js/morris.min.js" />
+			<add-attribute value="/resources/vendors/Chart.js/dist/Chart.min.js" />
+			<add-attribute value="/resources/portal/js/chartCustom.js " />
+		</put-list-attribute>
+	</definition>
+
+
+	<!-- List recommendation -->
+	<definition name="recommendation" extends="portal.master.page">
+		<put-attribute name="title" value="View Recommendations - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/listRecommendation.jsp" />
+	</definition>
+
+	<!-- Recommendation watting -->
+	<definition name="recommendationWaiting" extends="portal.master.page">
+		<put-attribute name="title" value="Waiting Recommendations - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/recommendationWaiting.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery.ba-throttle-debounce.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay_progress.min.js" />
+			<add-attribute value="/resources/portal/js/recommendationWaiting.js" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Recommendation submitted -->
+	<definition name="recommendationSubmitted" extends="portal.master.page">
+		<put-attribute name="title" value="Submitted Recommendations - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/recommendationSubmitted.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery.ba-throttle-debounce.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay_progress.min.js" />
+			<add-attribute value="/resources/portal/js/recommendationSubmitted.js" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Recommendation running -->
+	<definition name="recommendationRunning" extends="portal.master.page">
+		<put-attribute name="title" value="Running recommendations - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/recommendationRunning.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery.ba-throttle-debounce.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay_progress.min.js" />
+			<add-attribute value="/resources/portal/js/recommendationRunning.js" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Recommendation completed -->
+	<definition name="recommendationCompleted" extends="portal.master.page">
+		<put-attribute name="title" value="Completed Recommendations - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/recommendationCompleted.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery.ba-throttle-debounce.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay.min.js" />
+			<add-attribute value="/resources/js/loadingoverlay_progress.min.js" />
+			<add-attribute value="/resources/portal/js/recommendationCompleted.js" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Profile customer -->
+	<definition name="profile" extends="portal.master.page">
+		<put-attribute name="title" value="Your profile - Portal" />
+		<put-attribute name="body" value="/WEB-INF/views/portal/profile.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/jquery-ui.css" />
+			<add-attribute value="/resources/css/bootstrap-toggle.min.css" />
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery-ui.js" />
+			<add-attribute value="/resources/js/jquery.validate.js" />
+			<add-attribute value="/resources/js/bootstrap-toggle.min.js" />
+			<add-attribute value="/resources/vendors/validator/validator.js" />
+			<add-attribute
+				value="/resources/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js" />
+			<add-attribute value="/resources/portal/js/profile.js" />
+		</put-list-attribute>
+	</definition>
+
+	<definition name="packageDetail" extends="portal.master.page">
+		<put-attribute name="title" value="Your profile - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/packageDetail.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/jquery-ui.css" />
+			<add-attribute value="/resources/css/bootstrap-toggle.min.css" />
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery-ui.js" />
+			<add-attribute value="/resources/js/jquery.validate.js" />
+			<add-attribute value="/resources/js/bootstrap-toggle.min.js" />
+			<add-attribute value="/resources/vendors/validator/validator.js" />
+			<add-attribute
+				value="/resources/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js" />
+			<add-attribute value="/resources/portal/js/packageDetail.js" />
+		</put-list-attribute>
+	</definition>
+
+	<definition name="changePassword" extends="portal.master.page">
+		<put-attribute name="title" value="Change your password - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/changePassword.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/jquery-ui.css" />
+			<add-attribute value="/resources/css/bootstrap-toggle.min.css" />
+			<add-attribute value="/resources/css/dongna-css.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery-ui.js" />
+			<add-attribute value="/resources/js/jquery.validate.js" />
+			<add-attribute value="/resources/js/bootstrap-toggle.min.js" />
+			<add-attribute value="/resources/vendors/validator/validator.js" />
+			<add-attribute value="/resources/portal/js/changePassword.js" />
+		</put-list-attribute>
+	</definition>
+	<!-- Dongna -->
+
+	<definition name="uploadData" extends="portal.master.page">
+		<put-attribute name="title" value="Create Recommendation - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/createRecommendation.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/jquery-ui.min.css" />
+		    <add-attribute value="/resources/css/fileUploadButton.css" />
+			<add-attribute value="/resources/css/bootstrap-toggle.min.css" />
+			<add-attribute value="/resources/css/slickClock.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/js/jquery.form.js" />
+			<add-attribute value="/resources/js/jquery-ui.min.js" />
+			<add-attribute value="/resources/js/bootstrap-toggle.min.js" />
+			<add-attribute value="/resources/js/timePicker.js" />
+			<add-attribute value="/resources/js/fileReader.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="downloadData" extends="portal.master.page">
+		<put-attribute name="title" value="Download Data - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/downloadData.jsp" />
+	</definition>
+	<definition name="viewEvaluation" extends="portal.master.page">
+		<put-attribute name="title" value="View Evaluation - Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/portal/viewEvaluation.jsp" />
+	</definition>
+	<!-- END Pages for Customer Dashboard -->
+</tiles-definitions>

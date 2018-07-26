@@ -1,0 +1,39 @@
+.centerField {
+    text-align: center;
+}
+
+.box-shadow{
+	box-shadow: 10px 10px 5px #888;
+	margin-bottom: 100px;
+}
+
+.error {
+    color:red;
+}
+.valid {
+    color:green;
+}
+.form-margin{
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 15px; 
+}
+.selected-package{
+    background-color: #edad8e;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.productTimeMargin{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+
+
